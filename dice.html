@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Craps Game</title>
+<script type="text/javascript">
+var firstRoll = true;
+var gameStatus = "CONTINUE_ROLLING";
+var myPoint;
+
+// Function to roll dice and sum their values
+function rollDice() {
+    var die1, die2, workSum;
+    die1 = Math.floor(1 + Math.random() * 6);
+    die2 = Math.floor(1 + Math.random() * 6);
+    workSum = die1 + die2;
+
+    // Updating form values with dice results
+    craps.firstDie.value = die1;
+    craps.secondDie.value = die2;
+    craps.sum.value = workSum;
+
+    return workSum;
+}
+
+// Main function to play the game
+function play() {
+    var sumOfDice;
+
+    if (firstRoll) {
+        sumOfDice = rollDice();
+        switch (sumOfDice) {
+            case 7: 
+            case 11:
+                gameStatus = "WON";
+                craps.point.value = "";
+                break;
+
+            case 2: 
+            case 3: 
+            case 12:
+                gameStatus = "LOST";
+                craps.point.value = "";
+                break;
+
+            default:
+                gameStatus = "CONTINUE_ROLLING";
+                myPoint = sumOfDice;
+                craps.point.value = myPoint;
+                firstRoll = false;
+                break;
+        }
+    } else {
+        sumOfDice = rollDice();
+        if (sumOfDice == myPoint) {
+            gameStatus = "WON";
+        } else if (sumOfDice == 7) {
+            gameStatus = "LOST";
+        }
+    }
+
+    // Display result based on game status
+    if (gameStatus == "CONTINUE_ROLLING") {
+        window.alert("Roll again");
+    } else {
+        if (gameStatus == "WON") {
+            window.alert("Player wins. Click Roll Dice to play again.");
+        } else {
+            window.alert("Player loses. Click Roll Dice to play again.");
+        }
+        firstRoll = true;
+    }
+}
+</script>
+</head>
+<body>
+    <form name="craps">
+        <table border="1">
+            <tr>
+                <td>Die 1</td>
+                <td><input name="firstDie" type="text"></td>
+            </tr>
+            <tr>
+                <td>Die 2</td>
+                <td><input name="secondDie" type="text"></td>
+            </tr>
+            <tr>
+                <td>Sum</td>
+                <td><input name="sum" type="text"></td>
+            </tr>
+            <tr>
+                <td>Point</td>
+                <td><input name="point" type="text"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="Roll Dice" onclick="play()">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+

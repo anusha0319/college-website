@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Roll a six-sided Die 6000 Times </title>
+<script language = "Javascript">
+var frequency1 = 0, frequency2 = 0, frequency3 = 0, frequency4 = 0, frequency5 = 0, frequency6 = 0, face;
+for ( var roll = 1; roll <= 6000; ++roll ){
+face = Math.floor( 1 + 	Math.random() * 6 );
+switch ( face )
+{
+case 1:
+++frequency1;
+break;
+case 2:
+++frequency2;
+break;
+case 3:
+++frequency3;
+break;
+case 4:
+++frequency4;
+break;
+case 5:
+++frequency5;
+break;
+case 6:
+++frequency6;
+break;
+}
+}
+document.writeln( "<table border = '1' width = '50%'>" );
+document.writeln( "<tr><td><b>Face</b></td>" + "<td><b>Frequency</b></td></tr>" );
+document.writeln( "<tr><td>1</td><td>" + frequency1 + "</td></tr>" );
+document.writeln( "<tr><td>2</td><td>" + frequency2 + "</td></tr>" );
+document.writeln( "<tr><td>3</td><td>" + frequency3 + "</td></tr>" );
+document.writeln( "<tr><td>4</td><td>" + frequency4 + "</td></tr>" );
+document.writeln( "<tr><td>5</td><td>" + frequency5 + "</td></tr>" );
+document.writeln( "<tr><td>6</td><td>" + frequency6 + "</td></tr>" );
+</script>
+</head>
+<body>
+<p> Refresh or Reload </p>
+</body>
+</html>
