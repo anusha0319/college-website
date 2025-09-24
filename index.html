@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="10">
+  <title>Aurora Unofficial Website</title>
+
+  <!-- Bootstrap CSS & JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    .container {
+      width: 90%;
+      max-width: 1200px;
+    }
+
+    /* Global styles */
+    * { box-sizing: border-box; }
+    body { background-color: whitesmoke; }
+
+    /* Slideshow container */
+    .mySlides1, .mySlides2 { display: none; }
+    img { vertical-align: middle; }
+
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Carousel buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 3px;
+      user-select: none;
+      transition: 0.6s ease;
+    }
+    .next { right: 0; }
+    .prev:hover, .next:hover {
+      background-color: #f1f1f1;
+      color: black;
+    }
+
+    /* Submenu styling */
+    .submenu { display: none; position: absolute; left: 100%; top: 0; }
+    .dropdown-submenu:hover .submenu { display: block; }
+    .submenu a { white-space: nowrap; }
+
+    /* Carousel image styles */
+    .carousel-inner img {
+      width: 100%;
+      height: auto;       /* responsive */
+      max-height: 400px;  /* keep size */
+      object-fit: cover;
+    }
+
+    /* Page container */
+    .container-wrapper {
+      margin: 20px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Default styles for desktop */
+    .navbar { display: flex; justify-content: space-between; }
+
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .navbar { flex-direction: column; align-items: center; }
+      table { width: 100% !important; } /* make table fit */
+    }
+
+    /* Navbar Brand */
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+      color: black !important;
+      transition: color 0.3s, transform 0.3s;
+    }
+    .navbar-brand:hover {
+      transform: scale(1.1);
+    }
+
+    /* Heading */
+    h1 {
+      background: linear-gradient(to right, #2c3e50, #4ca1af);
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 42px;
+      font-family: 'Times New Roman', serif;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Carousel Caption Effects */
+    .carousel-caption {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      border-radius: 10px;
+    }
+    .carousel-caption h5 {
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .carousel-caption p {
+      color: #f8f9fa;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-light bg-light sticky-navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Aurora PG College</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" id="offcanvasNavbar">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <!-- Nav links -->
+        <ul class="navbar-nav" id="searchResults">
+          <li class="nav-item"><a class="nav-link active search-item" data-title="Home" href="font.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link search-item" data-title="Contacts" href="contact.html">Contacts</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">About College</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item search-item" data-title="AURR" href="#">AURR</a></li>
+              <li><a class="dropdown-item search-item" data-title="AURI" href="#">AURI</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Courses Offered</a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-submenu">
+                <a class="dropdown-item search-item" data-title="MCA" href="#">MCA</a>
+                <ul class="submenu dropdown-menu">
+                  <li><a class="dropdown-item search-item" data-title="MCA Program Outcomes" href="programoutcomes.html">Program Outcomes</a></li>
+                  <li><a class="dropdown-item search-item" data-title="MCA Course Outcomes" href="#">Course Outcomes</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu">
+                <a class="dropdown-item search-item" data-title="MBA" href="#">MBA</a>
+                <ul class="submenu dropdown-menu">
+                  <li><a class="dropdown-item search-item" data-title="MBA Program Outcomes" href="programoutcomes2.html">Program Outcomes</a></li>
+                  <li><a class="dropdown-item search-item" data-title="MBA Course Outcomes" href="#">Course Outcomes</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link search-item" data-title="Faculty Details" href="faculty.html">Faculty Details</a></li>
+        </ul>
+
+        <!-- Search Form -->
+        <form class="d-flex mt-3" onsubmit="performSearch(event)">
+          <input class="form-control me-2" type="search" id="searchInput" placeholder="Search">
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+        <div id="results" class="mt-2 text-muted"></div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Search Script -->
+<script>
+function performSearch(event) {
+  event.preventDefault();
+  const query = document.getElementById("searchInput").value.toLowerCase();
+  const items = document.querySelectorAll(".search-item");
+  let matchFound = false;
+
+  items.forEach(item => {
+    const title = item.getAttribute("data-title");
+    const text = title.toLowerCase();
+
+    item.innerHTML = title; // reset
+    if (text.includes(query) && query !== "") {
+      const regex = new RegExp("(" + query + ")", "gi");
+      const highlighted = title.replace(regex, "<mark>$1</mark>");
+      item.innerHTML = highlighted;
+      item.style.display = "block";
+      matchFound = true;
+    } else if (query === "") {
+      item.innerHTML = title;
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+
+  document.getElementById("results").innerText =
+    matchFound ? `Showing results for "${query}"` : `No matches found for "${query}"`;
+}
+</script>
+
+<!-- Heading -->
+<h1>Aurora PG College</h1>
+
+<!-- Carousel -->
+<div class="carousel-container">
+  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://www.apgcu.ac.in/images/apgc2.jpg" class="d-block w-100" alt="College Image 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Welcome to Aurora PG College</h5>
+          <p>Empowering students with knowledge & skills for the future.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.apgcu.edu.in/images/apgc4.jpg" class="d-block w-100" alt="College Image 2">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Modern Infrastructure</h5>
+          <p>State-of-the-art campus with top-notch facilities.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://apgcr.edu.in/images/apgc2.jpg" class="d-block w-100" alt="College Image 3">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Top Placements</h5>
+          <p>Achieve career success with our strong industry tie-ups.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
+
+<!-- Admissions -->
+<h3 style="color:orange; text-align:center; font-size:25px; text-decoration:underline;">ADMISSIONS</h3>
+<h4 style="color:black; text-align:center; font-size:20px; text-decoration:underline;"><b>Admission Procedure and Guidelines</b></h4>
+
+<p style="padding: 10px;">
+The candidates should be Indian Nationals and should satisfy local/non-local status requirements laid down in the Andhra Pradesh Educational Institutions...
+</p>
+
+<p>Here is the college website <a href="https://apgcr.edu.in">click here for college Official website </a></p>
+
+<p><b>Documents for Admission</b></p>
+<ul>
+  <li>Transfer Certificate</li>
+  <li>Date of Birth Certificate & SSC Memorandum</li>
+  <li>Migration Certificate</li>
+  <li>Bonafide Certificate for classes I to XII</li>
+  <li>Income Certificate (if necessary)</li>
+  <li>Nativity Certificate (if necessary)</li>
+  <li>Caste/Community Certificate (if necessary)</li>
+</ul>
+
+<p>Click here for Quick Registration <a href="login.html">click here</a></p>
+
+<h4 style="text-align: center;">COURSE DETAILS</h4>
+<div style="overflow-x:auto;">
+  <table style="margin: auto; width: 50%; border-collapse: collapse; border: 2px solid black; text-align: center;">
+    <tr style="background-color: lightgray;">
+      <th style="padding: 10px; border: 2px solid black;">Course</th>
+      <th style="padding: 10px; border: 2px solid black;">Fee Structure</th>
+      <th style="padding: 10px; border: 2px solid black;">Seat Availability</th>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 2px solid black;">MBA</td>
+      <td style="padding: 10px; border: 2px solid black;">₹1,00,000</td>
+      <td style="padding: 10px; border: 2px solid black;">60</td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 2px solid black;">MCA</td>
+      <td style="padding: 10px; border: 2px solid black;">₹60,000</td>
+      <td style="padding: 10px; border: 2px solid black;">60</td>
+    </tr>
+  </table>
+</div>
+
+<marquee> Top MCA and MBA College in Telangana State </marquee>
+
+</body>
+</html>
